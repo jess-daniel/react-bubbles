@@ -45,7 +45,9 @@ const ColorList = props => {
       .delete(`http://localhost:5000/api/colors/${color.id}`)
       .then(res => {
         console.log(res.data);
+        props.updateColors(props.colors.filter(color => color.id !== res.data));
       })
+
       .catch(err => console.log(err));
   };
 
