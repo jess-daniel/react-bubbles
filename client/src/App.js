@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Login from "./components/Login";
 import "./styles.scss";
+import BubblePage from "./components/BubblePage";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
           display BubblePage when you're authenticated 
         */}
       </div>
+      <PrivateRoute exact path="/bubbles-page">
+        <BubblePage />
+      </PrivateRoute>
     </Router>
   );
 }
